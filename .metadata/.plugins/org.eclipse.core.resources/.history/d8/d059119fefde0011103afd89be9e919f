@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AbsoluteLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/wu4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="24dp"
+        android:layout_y="134dp"
+        android:onClick="OnClickSperr"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="3dp"
+        android:layout_y="217dp" />
+
+    <Button
+        android:id="@+id/wu5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="202dp"
+        android:layout_y="133dp"
+        android:onClick="OnClickSperr"/>
+
+    <Button
+        android:id="@+id/wu3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="108dp"
+        android:layout_y="82dp"
+        android:onClick="OnClickSperr"/>
+
+    <Button
+        android:id="@+id/wu2"
+        android:layout_width="50"
+        android:layout_height="50"
+        android:layout_x="212dp"
+        android:layout_y="34dp"
+        android:onClick="OnClickSperr"/>
+
+    <Button
+        android:id="@+id/wu1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="OnClickSperr"
+        android:layout_x="20dp"
+        android:layout_y="26dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="248dp"
+        android:onClick="OnClickW"
+        android:text="@string/wurf" />
+
+</AbsoluteLayout>

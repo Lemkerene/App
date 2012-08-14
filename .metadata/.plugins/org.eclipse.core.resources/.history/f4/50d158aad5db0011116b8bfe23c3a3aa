@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, KniffelActivity!</string>
+    <string name="app_name">Kniffel</string>
+    <color name="myColor">#ff0000</color>
+    
+    <string name="einer">Einer</string>
+    <string name="zweier">Zweier</string>
+    <string name="dreier">Dreier</string>
+    <string name="vierer">Vierer</string>
+    <string name="funfer">Fünferer</string>
+    <string name="sechser">Sechser</string>
+    
+    <string name="dreierpasch">Dreier Pasch</string>
+    <string name="viererpasch">Vierer Pasch</string>
+    <string name="fullhouse">Fullhouse</string>
+    <string name="kleinestr">Kleine Strasse</string>
+    <string name="grostr">Große Strasse</string>
+    <string name="kniffel">Kniffel</string>
+    <string name="chance">Chance</string>
+    
+    <string name="gesoben">Gesamt Oben</string>
+    <string name="gesoben2">Gesamt Oben mit Bonus</string>
+    <string name="gesunten">Gesamt Unten</string>
+    <string name="ges">Gesamt</string>
+    <string name="bon">Bonus</string>
+    <string name="wurf">Würfeln</string>
+    
+    <string name="e">1</string>
+    <string name="z">2</string>
+    <string name="d">3</string>
+    <string name="v">4</string>
+    <string name="f">5</string>
+    <string name="s">6</string>
+    <string name="1">1</string>
+    
+        
+    
+    
+
+</resources>

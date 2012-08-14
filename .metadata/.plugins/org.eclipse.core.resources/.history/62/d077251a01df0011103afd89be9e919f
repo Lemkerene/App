@@ -1,0 +1,60 @@
+package com.kniffel;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+
+public class blatt extends Activity {
+    /** Called when the activity is first created. */
+	boolean einer = false;
+	boolean zweier =false;
+	boolean dreier =false;
+	boolean vierer =false;
+	boolean fuenfer =false;
+	boolean sechser =false;
+	
+	boolean dreierpasch =false;
+	boolean viererpasch =false;
+	boolean fullhouse =false;
+	boolean klstr =false;
+	boolean grstr =false;
+	boolean kniffel =false;
+	boolean chance =false;
+	private MyApp app = null;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.blatt);
+        app = (MyApp) this.getApplicationContext();
+        
+        setTitle(app.getSpielername());
+
+    }
+    
+    public void OnClickeintrag(View v)
+    {
+    	switch(v.getId())
+    	{
+    	case R.id.be1:
+    		einer = true;
+    		break;
+    	case R.id.be2:
+    		zweier = true;
+    		break;
+    	case R.id.be3:
+    		dreier = true;
+    		break;
+    	case R.id.be4:
+    		vierer = true;
+    		break;
+    	case R.id.be5:
+    		fuenfer = true;
+    		break;
+    	case R.id.be6:
+    		sechser = true;
+    		break;
+
+    	}
+    	
+    }
+}

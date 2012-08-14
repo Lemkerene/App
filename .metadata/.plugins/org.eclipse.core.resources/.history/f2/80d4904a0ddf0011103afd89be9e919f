@@ -1,0 +1,349 @@
+package com.kniffel;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class blatt extends Activity {
+    /** Called when the activity is first created. */
+	boolean einer = false;
+	boolean zweier =false;
+	boolean dreier =false;
+	boolean vierer =false;
+	boolean fuenfer =false;
+	boolean sechser =false;
+	
+	boolean dreierpasch =false;
+	boolean viererpasch =false;
+	boolean fullhouse =false;
+	boolean klstr =false;
+	boolean grstr =false;
+	boolean kniffel =false;
+	boolean chance =false;
+	private MyApp app = null;
+	private int[] z = new int[6];
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.blatt);
+        app = (MyApp) this.getApplicationContext();
+        
+        setTitle(app.getSpielername());
+        z =  app.GetZahlen();
+        
+        fullhouse =isFullhouse();
+    	switch(isStrasse())
+    	{
+    	case -1:
+    		klstr = true;
+    		break;
+    	case 1:
+    		grstr = true;
+    		break;
+    	}		
+        kniffel =isKniffel();
+        SetEinträge();
+        SetButtons();
+    }
+    public void SetButtons()
+    {
+    	boolean[] b= app.GetButtonEintrage();
+    	Button but = null;
+    	for(int i = 0;i<13;i++)
+    	{
+    		if(b[i])
+    		{
+    			switch(i)
+    			{
+    			case 0:
+    				but = (Button)findViewById(R.id.be1);
+    				but.setVisibility(0);
+    				break;
+    			case 1:
+    				but = (Button)findViewById(R.id.be2);
+    				but.setVisibility(0);
+    				break;
+    			case 2:
+    				but = (Button)findViewById(R.id.be3);
+    				but.setVisibility(0);
+    				break;
+    			case 3:
+    				but = (Button)findViewById(R.id.be4);
+    				but.setVisibility(0);
+    				break;
+    			case 4:
+    				but = (Button)findViewById(R.id.be5);
+    				but.setVisibility(0);
+    				break;
+    			case 5:
+    				but = (Button)findViewById(R.id.be6);
+    				but.setVisibility(0);
+    				break;
+    			}
+    		}
+    	}
+    }
+    public void SetEinträge()
+    {
+    	TextView tv = (TextView) findViewById(R.id.ein1er);
+    	int[] i =app.GetBlatteintrage();
+    	Integer j = i[0];
+    	tv.setText(j.toString());
+    	
+    	tv = (TextView) findViewById(R.id.ein2er);
+    	j = i[1];
+    	tv.setTextColor(R.color.Rot);
+    	if(j == 0)
+    	{
+    		tv.setTextColor(R.color.Gruen);
+    	}
+    	tv.setText(j.toString());
+    	
+    	tv = (TextView) findViewById(R.id.ein3er);
+    	j = i[2];
+    	tv.setTextColor(R.color.Rot);
+    	if(j == 0)
+    	{
+    		tv.setTextColor(R.color.Gruen);
+    	}
+    	tv.setText(j.toString());
+    	
+    	tv = (TextView) findViewById(R.id.ein4er);
+    	j = i[3];
+    	tv.setTextColor(R.color.Rot);
+    	if(j == 0)
+    	{
+    		tv.setTextColor(R.color.Gruen);
+    	}
+    	tv.setText(j.toString());
+    	
+    	tv = (TextView) findViewById(R.id.ein5er);
+    	j = i[4];
+    	tv.setTextColor(R.color.Rot);
+    	if(j == 0)
+    	{
+    		tv.setTextColor(R.color.Gruen);
+    	}
+    	tv.setText(j.toString());
+    	
+    	tv = (TextView) findViewById(R.id.ein6er);
+    	j = i[5];
+    	tv.setTextColor(R.color.Rot);
+    	if(j == 0)
+    	{
+    		tv.setTextColor(R.color.Gruen);
+    	}
+    	tv.setText(j.toString());
+    }
+    public int getZahl(int w)
+    {
+    	return w*z[w-1];
+    }
+    public void OnClickBack(View v)
+    {
+    	Intent in2 = new Intent(blatt.this,wurfel.class);
+		startActivity(in2);
+    }
+    public void OnClickeintrag(View v)
+    {
+    	TextView tv = null;
+    	Integer i;
+    	switch(v.getId())
+    	{
+    	case R.id.be1:
+    		tv = (TextView) findViewById(R.id.ein1er);
+    		i = getZahl(1);
+    		tv.setText(i.toString());
+    		app.setButtonEintrag(1);
+    		einer = true;
+    		break;
+    	case R.id.be2:
+    		tv = (TextView) findViewById(R.id.ein2er);
+    		i = getZahl(2);
+    		tv.setText(i.toString());
+    		app.setButtonEintrag(2);
+    		zweier = true;
+    		break;
+    	case R.id.be3:
+    		tv = (TextView) findViewById(R.id.ein3er);
+    		i = getZahl(3);
+    		tv.setText(i.toString());
+    		app.setButtonEintrag(3);
+    		dreier = true;
+    		break;
+    	case R.id.be4:
+    		tv = (TextView) findViewById(R.id.ein4er);
+    		i = getZahl(4);
+    		tv.setText(i.toString());
+    		app.setButtonEintrag(4);
+    		vierer = true;
+    		break;
+    	case R.id.be5:
+    		tv = (TextView) findViewById(R.id.ein5er);
+    		i = getZahl(5);
+    		tv.setText(i.toString());
+    		app.setButtonEintrag(5);
+    		fuenfer = true;
+    		break;
+    	case R.id.be6:
+    		tv = (TextView) findViewById(R.id.ein6er);
+    		i = getZahl(6);
+    		tv.setText(i.toString());
+    		app.setButtonEintrag(6);
+    		sechser = true;
+    		break;
+    	}
+    	
+    }
+    public boolean isKniffel()
+    {
+    	for(int i =0;i<5;i++)
+    	{
+    		if(z[0] != z[i])
+    		{
+    			return false;
+    		}
+    	}
+    	return true;
+    }
+    public int[] Zahlenzaehlen()
+    {
+    	int[] Zahl = {0,0,0,0,0,0};
+    	
+    	
+    	try {
+			for(int i=1;i<5;i++)
+			{
+				switch(z[i])
+				{
+				case 1:
+					Zahl[0]++;
+					break;
+				case 2:
+					Zahl[1]++;
+					break;
+				case 3:
+					Zahl[2]++;
+					break;
+				case 4:
+					Zahl[3]++;
+					break;
+				case 5:
+					Zahl[4]++;
+					break;
+				case 6:
+					Zahl[5]++;
+					break;
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return Zahl;
+    }
+    
+    
+    public boolean isFullhouse()
+    {
+    	int[] Zahl = Zahlenzaehlen();
+    	boolean bzweier = false;
+    	boolean bdreier = false;
+    	int nuller =0;
+    	for(int i =0;i<6;i++)
+    	{
+    		switch(Zahl[i])
+    		{
+    		case 0:
+    			nuller++;
+    			break;
+    		case 2:
+				bzweier = true;
+				break;
+    		case 3:
+    			bdreier = true;
+				break;
+				default:
+					return false;
+    		}
+    	}
+    	if(nuller== 3 && bzweier && bdreier)
+    	{
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+    }
+    
+    public int isStrasse()
+    {
+    	int[] Zahl = Zahlenzaehlen();
+    	int z =0;
+    	for(int i=0;i<6;i++)
+    		{
+    		if(Zahl[i] == 1)
+    			{
+    			z++;
+    			}
+    		}
+    	if(z == 5)
+    		{
+    			return 1;
+    		}
+    	
+    	//1-2-3-4, 2-3-4-5, oder 3-4-5-6
+    	z =0;
+    	for(int i =0;i<4;i++)
+    	{
+    		if(Zahl[i] == 1)
+    		{
+    			z++;
+    		}
+    		else
+    		{
+    			break;
+    		}
+    	}
+    	if(z == 4)
+    	{
+    		return -1;
+    	}
+    	for(int i =1;i<5;i++)
+    	{
+    		if(Zahl[i] == 1)
+    		{
+    			z++;
+    		}
+    		else
+    		{
+    			break;
+    		}
+    	}
+    	if(z == 4)
+    	{
+    		return -1;
+    	}
+    	for(int i =2;i<6;i++)
+    	{
+    		if(Zahl[i] == 1)
+    		{
+    			z++;
+    		}
+    		else
+    		{
+    			break;
+    		}
+    	}
+    	if(z == 4)
+    	{
+    		return -1;
+    	}
+    	return 0;
+    	
+    }
+}

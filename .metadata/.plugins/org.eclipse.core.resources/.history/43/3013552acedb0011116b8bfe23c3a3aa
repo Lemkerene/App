@@ -1,0 +1,61 @@
+package com.kniffel;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.Timer;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class wurfel extends Activity {
+    /** Called when the activity is first created. */
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.wurfel);
+        
+    }
+    
+    public void OnClickWurf(View v)
+    {
+    	Button b1;
+    	b1 = (Button) findViewById(R.id.button1);
+    	b1.setText(gibZufallszahl(6));
+    	
+    	Button b2;
+    	b2 = (Button) findViewById(R.id.button2);
+    	b2.setText(gibZufallszahl(6));
+    	
+    	Button b3;
+    	b3 = (Button) findViewById(R.id.button3);
+    	b3.setText(gibZufallszahl(6));
+    	
+    	Button b4;
+    	b4 = (Button) findViewById(R.id.button4);
+    	b4.setText(gibZufallszahl(6));
+    	
+    	Button b5;
+    	b5 = (Button) findViewById(R.id.button5);
+    	b5.setText(gibZufallszahl(6));
+		
+    }
+    public int gibZufallszahl(int pMaximum) 
+    {
+        return  (int) ((Math.random()*pMaximum)+1);
+    }
+}

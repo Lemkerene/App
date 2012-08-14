@@ -1,0 +1,30 @@
+package com.kniffel;
+
+import android.app.Application;
+
+public class MyApp extends Application {
+
+	private int Spielernummer;
+	private String Spielername;
+
+	public void setSpielernummer(int w)
+	{
+		Spielernummer = w;
+	}
+
+	public int getSpielernummer()
+	{
+	  return Spielernummer;
+	}
+	
+	public void setSpielername(String w)
+	{
+		Spielername = w;
+	}
+
+	public String getSpielername()
+	{
+	  return Spielername;
+	}
+
+}

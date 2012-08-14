@@ -1,0 +1,28 @@
+package com.kniffel;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class blatt extends Activity {
+    /** Called when the activity is first created. */
+	boolean einer = false;
+	boolean zweier =false;
+	boolean dreier =false;
+	boolean vierer =false;
+	boolean fuenfer =false;
+	boolean sechser =false;
+	
+	boolean dreierpasch =false;
+	boolean viererpasch =false;
+	boolean fullhouse =false;
+	boolean klstr =false;
+	boolean grstr =false;
+	boolean kniffel =false;
+	boolean chance =false;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.blatt);
+
+    }
+}

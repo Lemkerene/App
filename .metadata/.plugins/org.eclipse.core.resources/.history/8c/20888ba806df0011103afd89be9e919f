@@ -1,0 +1,72 @@
+package com.kniffel;
+
+import android.app.Application;
+
+public class MyApp extends Application {
+
+	private int Spielernummer;
+	private String Spielername;
+	private int[] Zahlen = new int[6];
+	private int[] Blatteintrag = new int[13];
+	
+	
+	
+	/*
+	 *Blatteintrag[0] = einer
+	 *Blatteintrag[1] = zweier 
+	 * Blatteintrag[2] = dreier
+	 * Blatteintrag[3] = vierer
+	 * Blatteintrag[4] = fuenfer
+	 * Blatteintrag[5] = sechser
+	 * 
+	 * Blatteintrag[6] = dreierpasch
+	 * Blatteintrag[7] = viererpasch
+	 * Blatteintrag[8] = fullhouse
+	 * Blatteintrag[9] = kl strasse
+	 * Blatteintrag[10] = gr Strasse
+	 * Blatteintrag[11] = kniffel
+	 * Blatteintrag[12] = chance
+	 */
+	
+	
+	
+
+	public void setSpielernummer(int w)
+	{
+		Spielernummer = w;
+	}
+	
+	public void setZahlen(int[] w)
+	{
+		Zahlen = w;
+	}
+	public int[] GetZahlen()
+	{
+		return Zahlen;
+	}
+	
+	public void setBlatteintrage(int[] w)
+	{
+		Blatteintrag = w;
+	}
+	public int[] GetBlatteintrage()
+	{
+		return Blatteintrag;
+	}
+
+	public int getSpielernummer()
+	{
+	  return Spielernummer;
+	}
+	
+	public void setSpielername(String w)
+	{
+		Spielername = w;
+	}
+
+	public String getSpielername()
+	{
+	  return Spielername;
+	}
+
+}

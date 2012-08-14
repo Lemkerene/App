@@ -1,0 +1,19 @@
+package com.kniffel;
+
+import android.app.Application;
+
+public class MyApp extends Application {
+
+private int was;
+
+public void setWas(int w)
+{
+  was = w;
+}
+
+public int getWas()
+{
+  return was;
+}
+
+}
