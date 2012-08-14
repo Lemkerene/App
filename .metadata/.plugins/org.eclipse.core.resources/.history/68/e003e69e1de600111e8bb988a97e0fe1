@@ -205,25 +205,6 @@ public class blatt extends Activity {
     		sechser = true;
     		break;
     	}
-    	Button but = null;
-		
-			but = (Button)findViewById(R.id.be1);
-			but.setVisibility(View.INVISIBLE);
-
-			but = (Button)findViewById(R.id.be2);
-			but.setVisibility(View.INVISIBLE);
-
-			but = (Button)findViewById(R.id.be3);
-			but.setVisibility(View.INVISIBLE);
-
-			but = (Button)findViewById(R.id.be4);
-			but.setVisibility(View.INVISIBLE);
-	
-			but = (Button)findViewById(R.id.be5);
-			but.setVisibility(View.INVISIBLE);
-
-			but = (Button)findViewById(R.id.be6);
-			but.setVisibility(View.INVISIBLE);
     	
     }
     public boolean isKniffel()
